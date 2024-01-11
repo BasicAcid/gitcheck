@@ -3,6 +3,8 @@
 #include <string.h>
 #include <dirent.h>
 
+// TODO: Add directory parameter.
+
 int
 process_dir(const char *path)
 {
