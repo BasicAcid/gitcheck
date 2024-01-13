@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+#include <unistd.h>
 
 // TODO
-// Default behavior should be:
-// ./gitchek   --> descent from current dir.
-// ./gitchek /some/path  --> descent from path.
+// Add help.
 
 int
 process_dir(const char *path)
@@ -56,9 +55,23 @@ process_dir(const char *path)
 }
 
 int
-main()
+main(int argc, char *argv[])
 {
-    const char *base_path = "/home/david/Workspace/programming";
+    const char *base_path;
+
+    if(argc == 1)
+    {
+        char path[200];
+        getcwd(path, 200);
+
+        base_path = path;
+    }
+    else
+    {
+        base_path = argv[1];
+    }
+
     process_dir(base_path);
+
     return 0;
 }
