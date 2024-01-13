@@ -3,7 +3,10 @@
 #include <string.h>
 #include <dirent.h>
 
-// TODO: Add directory parameter.
+// TODO
+// Default behavior should be:
+// ./gitchek   --> descent from current dir.
+// ./gitchek /some/path  --> descent from path.
 
 int
 process_dir(const char *path)
