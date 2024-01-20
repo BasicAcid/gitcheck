@@ -7,6 +7,9 @@
 // TODO
 // Add help.
 
+// TODO
+// Add a status indicator on the header.
+
 int
 process_dir(const char *path)
 {
@@ -58,12 +61,11 @@ int
 main(int argc, char *argv[])
 {
     const char *base_path;
+    char path[200];
 
     if(argc == 1)
     {
-        char path[200];
         getcwd(path, 200);
-
         base_path = path;
     }
     else
